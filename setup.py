@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="dobby-hardware",
+    name="dobby_hardware",
     version="0.0.1",
     author="Zeeshan Khan",
     author_email="zkhan1093@gmail.com",
