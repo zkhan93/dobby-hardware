@@ -24,7 +24,7 @@ class Ultrasonic(object):
         '''
 
         GPIO.output(self.trig, False)
-        time.sleep(0.4)
+        time.sleep(0.2)
 
         GPIO.output(self.trig, True)
         time.sleep(0.00001)
