@@ -18,11 +18,10 @@ class Ultrasonic(object):
     def __exit__(self, type, value, traceback):
         GPIO.cleanup()
 
-    def measure(self, upto=45):
+    def measure(self):
         ''' return how far the path is clear in cm
             by default to 45cm
         '''
-        upto = int(upto)
 
         GPIO.output(self.trig, False)
         time.sleep(0.4)
@@ -42,6 +41,6 @@ class Ultrasonic(object):
         # 34300 (sound speed)/2(time for reaching back to origin) = 17150
         distance = duration * 17150
         distance = round(distance, 2)
-        distance = distance if distance >= 10 and distance <= 400 else 0
+        distance = distance if distance >= 2 and distance <= 400 else 0
         self.distance = distance
         return self.distance
